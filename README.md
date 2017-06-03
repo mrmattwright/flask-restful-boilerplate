@@ -1,6 +1,8 @@
-# flask-restful-boilerplate
-Boilerplate template for a Python Flask_Restful applications with Flask-SQLAlchemy and SQLite example.
-Use this template to quick start rest api development with flask.
+# messagedrop
+Simple service with 2 endpoints
+  - POST /messages
+    returns a hash 
+  - GET /messages/<hash>
 
 ## Install instructions
   - Install postman chrome extension
@@ -15,4 +17,3 @@ Use this template to quick start rest api development with flask.
 Once you install or deploy app you can test it by calling the GET, POST, PUT, and DELETE method of /api/hello with postman.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
