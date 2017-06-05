@@ -15,7 +15,7 @@ class PosterBehavior(TaskSet):
     def profile(self):
         word = ''.join(choice(ascii_uppercase) for i in range(100))
         headers = {'content-type': 'application/json'}
-        self.client.post("/messages/", data={"message": word}, headers=headers)
+        self.client.post("/messages", None, {"message": word})
 
 class WebsiteUser(HttpLocust):
     weight = 10
@@ -26,5 +26,5 @@ class WebsiteUser(HttpLocust):
 class WebsitePoster(HttpLocust):
     weight = 1
     task_set = PosterBehavior
-    min_wait = 1000
-    max_wait = 2000
+    min_wait = 500
+    max_wait = 3000

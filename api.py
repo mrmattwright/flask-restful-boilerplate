@@ -11,7 +11,6 @@ print(mongo)
 
 api = Api(app)
 
-
 class MessageController(Resource):
 
     def post(self):
@@ -30,15 +29,8 @@ class MessagesController(Resource):
         result = mongo.db.messagestore.find_one({'_id': ObjectId(message_id)}, {'_id': False})
         return result
 
-#from controllers import helloController, messageController
-
-#api.add_resource(helloController.HelloController, '/api/hello')
-#api.add_resource(messageController.MessageController, '/messages')
-#api.add_resource(messageController.MessagesController, '/messages/<message_id>')
-
 api.add_resource(MessageController, '/messages')
 api.add_resource(MessagesController, '/messages/<message_id>')
-
 
 if __name__ == '__main__':
     app.run(debug=True)
